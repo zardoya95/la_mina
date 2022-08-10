@@ -69,18 +69,17 @@ class _PrincipalUIState extends State<PrincipalUI> {
           ],
         ),
         drawer: Drawer(
-          child: Padding(
+          child: Container(
+            color: tema().colorSecundario,
             padding: const EdgeInsets.all(10.0),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
                     children: [
-                      SizedBox(
-                        height: 150,
-                        child: Image.asset(
-                            'assets/Imagenes/logo_transparente.png'),
-                      ),
+                      SizedBox(height: 150, child: Image.asset(tema().logo)
+                          //Image.asset('assets/Imagenes/logo_transparente.png'),
+                          ),
                       Row(
                         children: [
                           Icon(Icons.person, color: tema().colorPrimario),
@@ -100,14 +99,17 @@ class _PrincipalUIState extends State<PrincipalUI> {
                         children: [
                           Icon(Icons.settings, color: tema().colorPrimario),
                           const SizedBox(width: 10),
-                          const Text('Mis preferencias'),
+                          Text(
+                            'Mis preferencias',
+                            style: TextStyle(color: tema().colorPrimario),
+                          ),
                         ],
                       ),
                       Row(
-                        children: const [
-                          Icon(Icons.warning, color: Colors.yellow),
-                          SizedBox(width: 10),
-                          Text('Quejas y Sugerencias'),
+                        children: [
+                          Icon(Icons.warning, color: tema().colorPrimario),
+                          const SizedBox(width: 10),
+                          const Text('Quejas y Sugerencias'),
                         ],
                       ),
                     ],
@@ -138,9 +140,7 @@ class _PrincipalUIState extends State<PrincipalUI> {
             height: double.maxFinite,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: modoClaro
-                    ? const AssetImage('assets/Imagenes/1.png')
-                    : const AssetImage('assets/Imagenes/2.png'),
+                image: AssetImage(tema().imagenFondo),
                 fit: BoxFit.fill,
               ),
             ),
@@ -201,39 +201,6 @@ class _PrincipalUIState extends State<PrincipalUI> {
                     ],
                   ),
                   const SizedBox(height: 60),
-                  /* const Divider(
-                    height: 10,
-                    color: Colors.white,
-                  ),*/
-                  /* Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        height: 80,
-                        child: Image.asset(
-                            'assets/Imagenes/logo_transparente.png'),
-                      ),
-                      SizedBox(),
-                      SizedBox(
-                        height: 40,
-                        child: Image.asset('assets/Imagenes/facebook.png'),
-                      ),
-                      SizedBox(),
-                      SizedBox(
-                        height: 40,
-                        child: Image.asset('assets/Imagenes/telegram.png'),
-                      ),
-                      SizedBox(),
-                      SizedBox(
-                        height: 40,
-                        child: Image.asset('assets/Imagenes/twitter.png'),
-                      ),
-                      SizedBox(),
-                      SizedBox(),
-                      SizedBox(),
-                    ],
-                  )*/
                 ],
               ),
             )));

@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
       title: 'La Mina',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          // primarySwatch: Colors.blue,
+          ),
       home: const PrincipalUI(),
     );
   }
